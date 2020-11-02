@@ -36,7 +36,7 @@ const routes = [
       component: () => import('./components/LibraryBooks.vue')
   },
   {
-    path: '/books/:bookId', name:'booksDetails',
+    path: '/books/:bookId', name:'bookDetails',
     component: () => import('./components/LibraryBooksDetails.vue')
   },
   {
