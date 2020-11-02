@@ -50,10 +50,8 @@ export default {
     methods:{
         async loadSelectedBook(){
             let {bookId} = this.$route.params;
-            console.log(bookId)
             let {data} = await axios.get(`${BOOK_API_ENDPOINT}${bookId}`)
             this.book = data
-            console.log(this.book)
         }
     },
     created(){
