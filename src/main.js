@@ -43,41 +43,41 @@ const routes = [
       path: '/genres', name:'genres',
       component: () => import('./components/LibraryGenres.vue')
   },
-    {
-      path: '/admin/',
-      name: 'Admin',
-      component: () => import('./components/Admin/adminIndex.vue')
-    },
-    {
-      path: '/admin/books/new',
-      name: 'BooksEditOrCreate',
-      component: () => import('./components/Admin/adminBooksEditOrCreate.vue')
-    {
-    },
-      path: '/admin/genres/new',
-      name: 'GenresEditOrCreate',
-    },
-      component: () => import('./components/Admin/adminGenresEditOrCreate.vue')
-    {
-      name: 'BooksEditOrCreate',
-      path: '/admin/books/:bookId',
-      component: () => import('./components/Admin/adminBooksEditOrCreate.vue')
-    {
-    },
-      path: '/admin/genres/:genreId',
-      name: 'GenresEditOrCreate',
-      component: () => import('./components/Admin/adminGenresEditOrCreate.vue')
-    },
-    {
-      path: '/admin/books',
-      name: 'adminBooks',
-      component: () => import('./components/Admin/adminBooks.vue')
-    },
-    {
-      path: '/admin/genres',
-    }, 
-      name: 'adminGenres',
-      component: () => import('./components/Admin/adminGenres.vue')
+  {
+    path: '/admin/',
+    name: 'Admin',
+    component: () => import('./components/Admin/adminIndex.vue')
+  },
+  {
+    path: '/admin/books/new',
+    name: 'BooksEditOrCreate',
+    component: () => import('./components/Admin/adminBooksEditOrCreate.vue')
+  },
+  {
+    path: '/admin/genres/new',
+    name: 'GenresEditOrCreate',
+    component: () => import('./components/Admin/adminGenresEditOrCreate.vue')
+  },
+  {
+    path: '/admin/books/:bookId',
+    name: 'BooksEditOrCreate',
+    component: () => import('./components/Admin/adminBooksEditOrCreate.vue')
+  },
+  {
+    path: '/admin/genres/:genreId',
+    name: 'GenresEditOrCreate',
+    component: () => import('./components/Admin/adminGenresEditOrCreate.vue')
+  },
+  {
+    path: '/admin/books',
+    name: 'adminBooks',
+    component: () => import('./components/Admin/adminBooks.vue')
+  },
+  {
+    path: '/admin/genres',
+    name: 'adminGenres',
+    component: () => import('./components/Admin/adminGenres.vue')
+  },
 ]
 
 const router = new VueRouter({
