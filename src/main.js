@@ -25,16 +25,20 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/home', name:'Home',
-    component: () => import('./components/LibraryHome.vue')
+    component: () => import('./components/LibraryBooks.vue')
+  },
+  {
+    path: '/', name:'Front',
+    component: () => import('./components/LibraryBooks.vue')
   },
   {
       path: '/books', name:'books',
       component: () => import('./components/LibraryBooks.vue')
   },
   {
-    path: '/books/:id', name:'booksDetails',
+    path: '/books/:bookId', name:'booksDetails',
     component: () => import('./components/LibraryBooksDetails.vue')
-  }
+  },
   {
       path: '/genres', name:'genres',
       component: () => import('./components/LibraryGenres.vue')
@@ -47,5 +51,5 @@ const router = new VueRouter({
 
 new Vue({
   render: h => h(App),
-  routes
+  router
 }).$mount('#app')
