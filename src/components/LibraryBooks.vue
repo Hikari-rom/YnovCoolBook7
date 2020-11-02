@@ -13,7 +13,14 @@
         </section>
         <div class="row">
             <div class="col-3">
-                Coucou
+                <ul>
+                    <li v-for="genre in genres" :key="genre.id">
+                        <button class="btn btn-info" @click="changeFilter(genre.id)">{{genre.label}}</button>
+                    </li>
+                    <li>
+                        <button class="btn btn-info" @click="getallBooks()">Réinitialiser le filtre</button>
+                    </li>
+                </ul>
             </div>
             <div class="col-9">
                 <div v-for="book in books" :key="book.id">
@@ -31,22 +38,40 @@
 import axios from "axios"
 
 const BOOKS_API_ENDPOINT = "http://localhost:3000/books"
+const GENRE_API_ENDPOINT = "http://localhost:3000/genres"
 
 export default {
     name: "LibraryBooks",
     data:()=>({
         books: [],
+        genres: [],
     }),
     methods:{
         goToDetails(bookId){
             this.$router.push({ name:'bookDetails', params:{bookId} })
+        },
+        changeFilter(genreId){
+            let bookFiltered = [];
+            for(let book of this.books){
+                if(book.genre.id == genreId)
+                {
+                    bookFiltered.push(book);
+                }
+            }
+            console.log(bookFiltered)
+            this.books = bookFiltered;
+        },
+        async getallBooks(){
+            let allBooks = await axios.get(BOOKS_API_ENDPOINT)
+            let { data } = allBooks;
+            this.books = data;
         }
     },
     async created(){
-        let allBooks = await axios.get(BOOKS_API_ENDPOINT);
-        let { data } = allBooks;
-        this.books = data;
-        console.log(this.books);
+        await this.getallBooks();
+        let allGenres = await axios.get(GENRE_API_ENDPOINT);
+        this.genres = allGenres.data;
+        console.log(this.genres)
     },
 }
 </script>
