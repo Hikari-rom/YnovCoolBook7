@@ -23,22 +23,57 @@ Vue.config.productionTip = false
 Vue.use(VueRouter)
 
 const routes = [
-  {
-    path: '/home', name:'Home',
-    component: () => import('./components/LibraryHome.vue')
-  },
-  {
-      path: '/books', name:'books',
-      component: () => import('./components/LibraryBooks.vue')
-  },
-  {
-    path: '/books/:id', name:'booksDetails',
-    component: () => import('./components/LibraryBooksDetails.vue')
-  }
-  {
-      path: '/genres', name:'genres',
-      component: () => import('./components/LibraryGenres.vue')
-  },
+  // {
+  //   path: '/home', name:'Home',
+  //   component: () => import('./components/LibraryHome.vue')
+  // },
+  // {
+  //     path: '/books', name:'books',
+  //     component: () => import('./components/LibraryBooks.vue')
+  // },
+  // {
+  //   path: '/books/:id', name:'booksDetails',
+  //   component: () => import('./components/LibraryBooksDetails.vue')
+  // },
+  // {
+  //     path: '/genres', name:'genres',
+  //     component: () => import('./components/LibraryGenres.vue')
+  // },
+    {
+      path: '/admin/',
+      name: 'Admin',
+      component: () => import('./components/Admin/adminIndex.vue')
+    },
+    {
+      path: '/admin/books/new',
+      name: 'BooksEditOrCreate',
+      component: () => import('./components/Admin/adminBooksEditOrCreate.vue')
+    },
+    {
+      path: '/admin/genres/new',
+      name: 'GenresEditOrCreate',
+      component: () => import('./components/Admin/adminGenresEditOrCreate.vue')
+    },
+    {
+      path: '/admin/books/:bookId',
+      name: 'BooksEditOrCreate',
+      component: () => import('./components/Admin/adminBooksEditOrCreate.vue')
+    },
+    {
+      path: '/admin/genres/:genreId',
+      name: 'GenresEditOrCreate',
+      component: () => import('./components/Admin/adminGenresEditOrCreate.vue')
+    },
+    {
+      path: '/admin/books',
+      name: 'adminBooks',
+      component: () => import('./components/Admin/adminBooks.vue')
+    },
+    {
+      path: '/admin/genres',
+      name: 'adminGenres',
+      component: () => import('./components/Admin/adminGenres.vue')
+    }, 
 ]
 
 const router = new VueRouter({
@@ -47,5 +82,5 @@ const router = new VueRouter({
 
 new Vue({
   render: h => h(App),
-  routes
+  router
 }).$mount('#app')
