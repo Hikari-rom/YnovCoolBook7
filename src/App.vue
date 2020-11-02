@@ -53,27 +53,12 @@
                 </div>
             </section>
             <!-- END WELCOME-->
-
-
             <!-- Content -->
             <section class="container">
-
-
-
-
-
-
             </section>
             <!-- END STATISTIC CHART-->
-
-
         </div>
-
     </div>
-
-
-
-
   </div>
 </template>
 
