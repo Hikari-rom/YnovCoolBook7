@@ -25,7 +25,7 @@
                                     <span class="bot-line"></span>Genre</router-link>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="/#/admin">
                                     <i class="fas fa-cogs"></i>
                                     <span class="bot-line"></span>Admin</a>
                             </li>
@@ -40,11 +40,10 @@
         <!-- PAGE CONTENT-->
         <div class="page-content--bgf7">
 
-            <!-- WELCOME-->
-            <!-- END WELCOME-->
+            
             <!-- Content -->
             <section class="container">
-                <router-view></router-view>
+                <router-view/>
             </section>
             <!-- END STATISTIC CHART-->
         </div>
@@ -57,9 +56,6 @@
 
 export default {
   name: 'App',
-  components: {
-
-  }
 }
 </script>
 
