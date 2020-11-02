@@ -15,10 +15,37 @@ import '@/assets/css/theme.css';
 
 
 import App from './App.vue'
+import VueRouter from 'vue-router';
 
 
 Vue.config.productionTip = false
 
+Vue.use(VueRouter)
+
+const routes = [
+  {
+    path: '/home', name:'Home',
+    component: () => import('./components/LibraryHome.vue')
+  },
+  {
+      path: '/books', name:'books',
+      component: () => import('./components/LibraryBooks.vue')
+  },
+  {
+    path: '/books/:id', name:'booksDetails',
+    component: () => import('./components/LibraryBooksDetails.vue')
+  }
+  {
+      path: '/genres', name:'genres',
+      component: () => import('./components/LibraryGenres.vue')
+  },
+]
+
+const router = new VueRouter({
+  routes
+})
+
 new Vue({
   render: h => h(App),
+  routes
 }).$mount('#app')
